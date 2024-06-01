@@ -1,17 +1,57 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Mario Style Game</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>My Mario Game</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-image: url('background.jpg'); /* 동양풍 도시 이미지 */
+            background-size: cover;
+        }
+        #gameCanvas {
+            display: block;
+            background-color: skyblue;
+        }
+        #score {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            color: white;
+        }
+        #gameOver {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            color: red;
+            display: none;
+        }
+        #replayButton {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <div class="game-container">
-        <div class="score" id="score">Score: 0</div>
-        <div class="character" id="character"></div>
-        <div class="obstacle" id="obstacle"></div>
-    </div>
+    <div id="score">Score: 0</div>
+    <div id="gameOver">Game Over</div>
+    <button id="replayButton" onclick="replayGame()">Replay</button>
+    <canvas id="gameCanvas" width="800" height="400"></canvas>
     <script src="script.js"></script>
 </body>
 </html>
